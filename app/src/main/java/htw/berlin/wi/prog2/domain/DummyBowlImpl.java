@@ -16,6 +16,6 @@ public class DummyBowlImpl implements Bowl {
 
     @Override
     public List<String> getIngredientNames() {
-        return List.of("Käse", "Käse", "Käse");
+        return List.of("Käse", "Käse", "Käse", "Hund");
     }
 }
