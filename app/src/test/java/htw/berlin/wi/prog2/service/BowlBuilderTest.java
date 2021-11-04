@@ -84,4 +84,11 @@ class BowlBuilderTest {
     }
 
     // TODO hier mind. einen Test hinzufügen, der das korrekte Werfen der IllegalBowlException testet (assertThrows)
+    @Test
+    @DisplayName("aa")
+    void twoIngBowl(){
+        assertThrows (IllegalBowlException.class, ()->builder.add(reis).buildPrecomputed()) ;
+
+
+    }
 }

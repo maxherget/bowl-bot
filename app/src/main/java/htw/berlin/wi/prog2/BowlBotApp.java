@@ -3,6 +3,7 @@
  */
 package htw.berlin.wi.prog2;
 
+import htw.berlin.wi.prog2.domain.Ingredient;
 import htw.berlin.wi.prog2.service.SimpleInputParser;
 import htw.berlin.wi.prog2.service.BowlBuilder;
 import htw.berlin.wi.prog2.ui.CommandLineUI;
@@ -10,9 +11,11 @@ import htw.berlin.wi.prog2.ui.UserInputWrapper;
 
 public class BowlBotApp {
     public static void main(String[] args) {
+
         SimpleInputParser parser = new SimpleInputParser();
         BowlBuilder builder = new BowlBuilder();
         CommandLineUI clui = new CommandLineUI(new UserInputWrapper(System.in, System.out), builder, parser);
         clui.launch();
+
     }
 }

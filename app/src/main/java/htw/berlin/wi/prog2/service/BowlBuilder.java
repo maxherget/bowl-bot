@@ -12,17 +12,25 @@ public class BowlBuilder {
         // TODO hier die Annahme von Zutaten implementieren
         int a = 0;
         Zutaten.add(a,ingredient);
-          a = a + 1;
+        //a = a + 1;
         return this; // die Rückgabe von this sollte beibehalten bleiben (siehe Benutzung im BowlBuilderTest)
     }
 
     public Bowl buildPrecomputed() {
         // TODO hier stattdessen die neue Klasse PrecomputedBowl verwenden
+        if (Zutaten.size() < 2) {
+            throw new IllegalBowlException("Mindestens zwei Zutaten!");
+
+        }
         return new PrecomputedBowl();
     }
 
     public Bowl buildDynamicallyComputed() {
         // TODO hier stattdessen die neue Klasse DynamicallyComputedBowl verwenden
+        if (Zutaten.size() < 2) {
+            throw new IllegalBowlException("Mindestens zwei Zutaten!");
+
+        }
         return new DynamicallyComputed();
     }
 }

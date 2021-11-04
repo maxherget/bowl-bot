@@ -10,24 +10,24 @@ public class PrecomputedBowl implements Bowl {
 
     List<Ingredient> specificIngredients = new ArrayList<>(BowlBuilder.Zutaten);
     int calories = BowlBuilder.Zutaten.get(0).getCalories() + BowlBuilder.Zutaten.get(1).getCalories();
-    double price = BowlBuilder.Zutaten.get(0).getPrice() + BowlBuilder.Zutaten.get(1).getPrice();
+    double price =  BowlBuilder.Zutaten.get(0).getPrice() + BowlBuilder.Zutaten.get(1).getPrice();
+
+
 
 
     @Override
     public double calculatePrice() {
-        return price;
+        return specificIngredients.get(0).getPrice() + specificIngredients.get(1).getPrice();
     }
 
     @Override
     public int calculateCalories() {
-        return calories;
+        return specificIngredients.get(0).getCalories() + specificIngredients.get(1).getCalories();
     }
 
     @Override
     public List<String> getIngredientNames() {
-
-        return List.of(specificIngredients.get(1).getName() , specificIngredients.get(0).getName() );
-
+      return List.of(specificIngredients.get(1).getName() , specificIngredients.get(0).getName());
 
 
 
