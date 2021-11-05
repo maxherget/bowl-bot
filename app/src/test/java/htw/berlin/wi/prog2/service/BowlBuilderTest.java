@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -86,7 +87,7 @@ class BowlBuilderTest {
     // TODO hier mind. einen Test hinzufügen, der das korrekte Werfen der IllegalBowlException testet (assertThrows)
     @Test
     @DisplayName("aa")
-    void twoIngBowl(){
+    void buildBowlWithLessThen2Ingredients(){
         assertThrows (IllegalBowlException.class, ()->builder.add(reis).buildPrecomputed()) ;
 
 

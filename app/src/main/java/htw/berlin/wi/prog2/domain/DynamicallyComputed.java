@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DynamicallyComputed implements Bowl {
-    List<Ingredient> specificIngredients = new ArrayList<>(BowlBuilder.Zutaten);
+    List<Ingredient> specificIngredients = new ArrayList<>(BowlBuilder.zutaten);
 
 
     @Override

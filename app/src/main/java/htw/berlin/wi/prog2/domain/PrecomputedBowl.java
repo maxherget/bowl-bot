@@ -8,11 +8,9 @@ import java.util.List;
 
 public class PrecomputedBowl implements Bowl {
 
-    List<Ingredient> specificIngredients = new ArrayList<>(BowlBuilder.Zutaten);
-    int calories = BowlBuilder.Zutaten.get(0).getCalories() + BowlBuilder.Zutaten.get(1).getCalories();
-    double price =  BowlBuilder.Zutaten.get(0).getPrice() + BowlBuilder.Zutaten.get(1).getPrice();
-
-
+    List<Ingredient> specificIngredients = new ArrayList<>(BowlBuilder.zutaten);
+    int calories = BowlBuilder.zutaten.get(0).getCalories() + BowlBuilder.zutaten.get(1).getCalories();
+    double price =  BowlBuilder.zutaten.get(0).getPrice() + BowlBuilder.zutaten.get(1).getPrice();
 
 
     @Override
