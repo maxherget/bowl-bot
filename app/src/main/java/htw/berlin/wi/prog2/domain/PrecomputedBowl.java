@@ -1,14 +1,52 @@
 package htw.berlin.wi.prog2.domain;
 
-import htw.berlin.wi.prog2.service.BowlBuilder;
-import org.w3c.dom.css.ElementCSSInlineStyle;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class PrecomputedBowl implements Bowl {
+    private double completePrice = 0;
+    private int completeCalories = 0;
+    private List<Ingredient> specificIngredients = new ArrayList<>();
+   ;
 
-    List<Ingredient> specificIngredients = new ArrayList<>(BowlBuilder.zutaten);
+    @Override
+    public double calculatePrice() {
+        for (Ingredient a : specificIngredients) {
+            this.completePrice = completePrice + a.getPrice();
+        }
+        return completePrice;
+    }
+    @Override
+    public int calculateCalories() {
+        for (Ingredient a : this.specificIngredients) {
+            this.completeCalories = this.completeCalories + a.getCalories();
+        }
+        return this.completeCalories;
+    }
+
+    @Override
+    public List<String> getIngredientNames() {
+        List<String> ingredientsNames = new ArrayList<>();
+        for (Ingredient a : specificIngredients) {
+            ingredientsNames.add(a.getName());
+        }
+        return ingredientsNames;
+    }
+
+    public PrecomputedBowl (List<Ingredient> name, double price, int calories ){
+        specificIngredients = name;
+        completePrice = price ;
+        completeCalories = calories;
+    }
+
+
+
+
+
+
+
+
+    /*  List<Ingredient> specificIngredients = new ArrayList<>(BowlBuilder.zutaten);
     int calories = BowlBuilder.zutaten.get(0).getCalories() + BowlBuilder.zutaten.get(1).getCalories();
     double price =  BowlBuilder.zutaten.get(0).getPrice() + BowlBuilder.zutaten.get(1).getPrice();
 
@@ -29,37 +67,5 @@ public class PrecomputedBowl implements Bowl {
 
 
 
-    }
+    }*/
 }
-/*
-public class PrecomputedBowl implements Bowl {
-    Arraylist<Ingredient> =
-    Ingredient Zutat2 =  BowlBuilder.Zutaten.get(0);
-    Ingredient Zutat1 =  BowlBuilder.Zutaten.get(1);
-
-
-    @Override
-    public double calculatePrice() {
-        double completePrice = Zutat1.getPrice() + Zutat2.getPrice();
-
-        return completePrice;
-    }
-
-    @Override
-    public int calculateCalories() {
-        int completeCalories = Zutat1.getCalories() + Zutat2.getCalories();
-
-        return completeCalories;
-    }
-
-    @Override
-    public List<String> getIngredientNames() {
-
-        return List.of( Zutat1.getName(),  Zutat2.getName());
-
-
-
-
-    }
-}
-*/
